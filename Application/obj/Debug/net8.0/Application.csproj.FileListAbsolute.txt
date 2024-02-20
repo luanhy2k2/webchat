@@ -1,0 +1,15 @@
+D:\DELL E7450\Project.Net\ChatApp\Application\bin\Debug\net8.0\Application.deps.json
+D:\DELL E7450\Project.Net\ChatApp\Application\bin\Debug\net8.0\Application.dll
+D:\DELL E7450\Project.Net\ChatApp\Application\bin\Debug\net8.0\Application.pdb
+D:\DELL E7450\Project.Net\ChatApp\Application\obj\Debug\net8.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\DELL E7450\Project.Net\ChatApp\Application\obj\Debug\net8.0\Application.AssemblyInfoInputs.cache
+D:\DELL E7450\Project.Net\ChatApp\Application\obj\Debug\net8.0\Application.AssemblyInfo.cs
+D:\DELL E7450\Project.Net\ChatApp\Application\obj\Debug\net8.0\Application.csproj.CoreCompileInputs.cache
+D:\DELL E7450\Project.Net\ChatApp\Application\obj\Debug\net8.0\Application.dll
+D:\DELL E7450\Project.Net\ChatApp\Application\obj\Debug\net8.0\refint\Application.dll
+D:\DELL E7450\Project.Net\ChatApp\Application\obj\Debug\net8.0\Application.pdb
+D:\DELL E7450\Project.Net\ChatApp\Application\obj\Debug\net8.0\ref\Application.dll
+D:\DELL E7450\Project.Net\ChatApp\Application\bin\Debug\net8.0\Data.dll
+D:\DELL E7450\Project.Net\ChatApp\Application\bin\Debug\net8.0\Data.pdb
+D:\DELL E7450\Project.Net\ChatApp\Application\obj\Debug\net8.0\Application.csproj.AssemblyReference.cache
+D:\DELL E7450\Project.Net\ChatApp\Application\obj\Debug\net8.0\Application.csproj.CopyComplete
