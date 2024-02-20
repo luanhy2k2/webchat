@@ -1,0 +1,57 @@
+<div class="header-contact text-center">
+    <h1>Đăng nhập</h1>
+</div>
+<div style="margin-bottom: 70px;" id="customer-login">
+    <div id="login" class="userbox">
+        <div class="accounttype">
+            <h2 class="title"></h2>
+        </div>
+        <div  id="customer_login">
+            <input name="form_type" type="hidden" value="customer_login" />
+            <input name="utf8" type="hidden" value="✓" />
+            <div class="clearfix large_form">
+                <label for="customer_email" class="icon-field"><i class="fa fa-google" style="color: black;"></i></label>
+                <input [(ngModel)] = "email"  required type="email" id="customer_email" placeholder="Email" class="text" />
+            </div>
+            <div class="clearfix large_form">
+                <label for="customer_password" class="icon-field"><i class="fa fa-lock" style="color: black;"></i></label>
+                <input [(ngModel)] = "password" required type="password" id="customer_password" placeholder="Mật khẩu" class="text" size="16" />
+            </div>
+            <div class="action_bottom">
+                <input (click)="login()" class="btn btn-signin" type="submit" value="Đăng nhập" />
+                <!-- <div *ngIf="isLoading">Đang đăng nhập...</div> -->
+            </div>
+            <div class="req_pass">
+                <a href="#" >Quên mật khẩu?</a>
+                hoặc <a href="/account/register" title="Đăng ký">Đăng ký</a>
+            </div>
+            <input id="b67806b848ae44668d5d1e66fd860c2a" name="g-recaptcha-response" type="hidden" value="your-recaptcha-response" />
+        </div>
+        <!-- <div class="customer-login-social">
+            <button id="btn-facebook-login" class="btsocialloginfb">
+                <i class="fa fa-facebook" style="margin-top: -2.2em; font-size: 1.4em;"></i>
+            </button>
+            <button class="btsociallogingg" id="btn-google-login">
+                <i class="fa fa-google" style="margin-top: -1.2em; font-size: 1.4em;"></i>
+            </button>
+        </div> -->
+    </div>
+    <div id="recover-password" style="display: none;" class="userbox">
+        <div class="accounttype">
+            <h2>Phục hồi mật khẩu</h2>
+        </div>
+        <form accept-charset="UTF-8" action="/account/recover" method="post">
+            <input name="form_type" type="hidden" value="recover_customer_password" />
+            <input name="utf8" type="hidden" value="✓" />
+            <label for="email" class="icon-field"><i class="icon-login icon-envelope"></i></label>
+            <input type="email" size="30" name="email" placeholder="Email" id="recover-email" class="text" />
+            <div class="action_bottom">
+                <input class="btn" type="submit" value="Gửi" />
+            </div>
+            <div class="req_pass">
+                <a href="#">Hủy</a>
+            </div>
+            <input id="a707ec389e944a6490ccd9934478f6b9" name="g-recaptcha-response" type="hidden" value="your-recaptcha-response" />
+        </form>
+    </div>
+</div>
