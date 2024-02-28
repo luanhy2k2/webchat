@@ -110,22 +110,13 @@ export class ChatComponent {
   }
 
   roomList() {
-    const token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJsdWFuMmsyaHlAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6Imx1YW4yazJoeUBnbWFpbC5jb20iLCJqdGkiOiI5YmViNmMyMC1mZDMzLTRkMDYtYjQ4Mi03ZjkyZTQ2MGJlZTQiLCJleHAiOjE3MDg0NjQyNjR9.yjozTqyBy_btwRYHpIyl1F1yUVmccMTZBZUMKmHC7-zX7LFjjjgtwlPF8huDlDKJ2s4Am9ntO931AIMemqUj2A";
-  
-    fetch('https://localhost:7066/api/Room', {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    })
-    .then(response => response.json())
-    .then(data => {
-      this.chatRooms = data.map((room:any) => new ChatRoom(room.id, room.name));
-      if (this.chatRooms.length > 0)
-        this.joinRoom(this.chatRooms[0]);
-    });
+    this.http.get<any[]>('https://localhost:7066/api/Room', { headers:this.userService.addHeaderToken() })
+      .subscribe(data => {
+        this.chatRooms = data.map(room => new ChatRoom(room.id, room.name));
+        if (this.chatRooms.length > 0)
+          this.joinRoom(this.chatRooms[0]);
+      });
   }
-  
-
   userList() {
     this.connection.invoke("GetUsers", this.joinedRoom).then((result:any) => {
       this.chatUsers = result.map((user:any) => new ChatUser(
@@ -137,7 +128,6 @@ export class ChatComponent {
       ));
     });
   }
-
   createRoom() {
     this.roomService.createRoom(this.roomCreate)
     .subscribe(res =>{
@@ -145,8 +135,6 @@ export class ChatComponent {
       console.log(res);
     })
   }
-  
-
   editRoom() {
     const roomId = this.joinedRoomId;
     const roomName = (<HTMLInputElement>document.getElementById("newRoomName")).value;
@@ -156,7 +144,6 @@ export class ChatComponent {
       body: JSON.stringify({ id: roomId, name: roomName })
     });
   }
-
   deleteRoom() {
     fetch('/api/Rooms/' + this.joinedRoomId, {
       method: 'DELETE',
@@ -164,33 +151,27 @@ export class ChatComponent {
       body: JSON.stringify({ id: this.joinedRoomId })
     });
   }
-
   messageHistory() {
-    const token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJsdWFuMmsyaHlAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6Imx1YW4yazJoeUBnbWFpbC5jb20iLCJqdGkiOiI5YmViNmMyMC1mZDMzLTRkMDYtYjQ4Mi03ZjkyZTQ2MGJlZTQiLCJleHAiOjE3MDg0NjQyNjR9.yjozTqyBy_btwRYHpIyl1F1yUVmccMTZBZUMKmHC7-zX7LFjjjgtwlPF8huDlDKJ2s4Am9ntO931AIMemqUj2A";
-  
-    fetch('https://localhost:7066/api/Messages/Room/' + this.joinedRoom, {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    })
-      .then(response => response.json())
-      .then(data => {
-        this.chatMessages = data.map((message :any) => {
+    this.http.get<any[]>('https://localhost:7066/api/Messages/Room/' + this.joinedRoom, { headers:this.userService.addHeaderToken() })
+      .subscribe(data => {
+        this.chatMessages = data.map(message => {
           const isMine = message.user === this.myName;
           return new ChatMessage(
             message.content,
-            message.timestamp,
+            new Date(message.timestamp),
             message.user,
             isMine,
             message.avatar
           );
         });
+  
         const chatBody = document.querySelector('.chat-body');
         if (chatBody) {
           chatBody.scrollTop = chatBody.scrollHeight;
         }
       });
   }
+  
 
   roomAdded(room: ChatRoom) {
     this.chatRooms.push(room);

@@ -17,8 +17,9 @@ namespace Application.Mappings
                 .ForMember(dst => dst.User, otp => otp.MapFrom(o => o.User.FullName))
                 .ForMember(dst => dst.Avartar, otp => otp.MapFrom(o => o.User.Avartar))
                 .ForMember(dst => dst.Content, otp => otp.MapFrom(o => o.Content))
-                .ForMember(dst => dst.Timestamp, otp => otp.MapFrom(o => o.TimeStamp)).ReverseMap();
-            CreateMap<MessageModel, Message>().ReverseMap();
+
+                .ForMember(dst => dst.Timestamp, otp => otp.MapFrom(o => o.TimeStamp));
+            CreateMap<MessageModel, Message>();
         }
     }
 }

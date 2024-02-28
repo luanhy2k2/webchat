@@ -13,5 +13,6 @@ namespace Application.Model
         public string User {  get; set; }
         public string Room {  get; set; }
         public string Avartar {  get; set; }
+       
     }
 }

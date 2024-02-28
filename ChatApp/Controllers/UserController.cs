@@ -29,20 +29,11 @@ namespace ChatApp.Controllers
             }
             
         }
-        [HttpGet]
- // Đảm bảo rằng chỉ người dùng đã đăng nhập mới có thể truy cập phương thức này
-        public IActionResult GetUN()
-        {
-            // Kiểm tra xem người dùng đã được xác thực chưa
-          
-                // Lấy tên của người dùng từ Identity
-                var username = User.Identity.Name;
+        
 
-                return Ok(username);
-          
-        }
+        
         [HttpPost("signUp")]
-        public async Task<ActionResult> SignUp([FromBody] SignUpModel model)
+        public async Task<ActionResult> SignUp(SignUpModel model)
         {
             try
             {

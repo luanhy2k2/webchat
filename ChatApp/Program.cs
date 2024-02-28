@@ -41,6 +41,7 @@ builder.Services.AddIdentity<ManageUser, IdentityRole>() // để cho nó dùng 
     .AddDefaultTokenProviders();
 
 builder.Services.AddScoped<UserRepository>();
+builder.Services.AddScoped<UploadRepository>();
 builder.Services.AddScoped<RoomRepository>();
 builder.Services.AddScoped<MessageRepository>();
 builder.Services.AddAuthentication(x =>
@@ -86,6 +87,7 @@ if (app.Environment.IsDevelopment())
 }
 app.UseCors();
 app.UseAuthentication();
+app.UseStaticFiles();
 app.UseAuthorization();
 app.UseHttpsRedirection();
 app.MapHub<ChatHub>("chatHub");

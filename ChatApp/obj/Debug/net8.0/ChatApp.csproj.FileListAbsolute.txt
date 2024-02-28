@@ -161,3 +161,10 @@ D:\DELL E7450\Project.Net\ChatApp\ChatApp\bin\Debug\net8.0\IdentityServer4.Stora
 D:\DELL E7450\Project.Net\ChatApp\ChatApp\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
 D:\DELL E7450\Project.Net\ChatApp\ChatApp\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
 D:\DELL E7450\Project.Net\ChatApp\ChatApp\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\DELL E7450\Project.Net\ChatApp\ChatApp\obj\Debug\net8.0\ChatApp.sourcelink.json
+D:\DELL E7450\Project.Net\ChatApp\ChatApp\bin\Debug\net8.0\Azure.Storage.Blobs.dll
+D:\DELL E7450\Project.Net\ChatApp\ChatApp\bin\Debug\net8.0\Azure.Storage.Common.dll
+D:\DELL E7450\Project.Net\ChatApp\ChatApp\bin\Debug\net8.0\System.IO.Hashing.dll
+D:\DELL E7450\Project.Net\ChatApp\ChatApp\bin\Debug\net8.0\Microsoft.WindowsAzure.Storage.dll
+D:\DELL E7450\Project.Net\ChatApp\ChatApp\bin\Debug\net8.0\ChatApp.staticwebassets.runtime.json
+D:\DELL E7450\Project.Net\ChatApp\ChatApp\bin\Debug\net8.0\bundleconfig.json

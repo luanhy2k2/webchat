@@ -13,3 +13,4 @@ D:\DELL E7450\Project.Net\ChatApp\Application\bin\Debug\net8.0\Data.dll
 D:\DELL E7450\Project.Net\ChatApp\Application\bin\Debug\net8.0\Data.pdb
 D:\DELL E7450\Project.Net\ChatApp\Application\obj\Debug\net8.0\Application.csproj.AssemblyReference.cache
 D:\DELL E7450\Project.Net\ChatApp\Application\obj\Debug\net8.0\Application.csproj.CopyComplete
+D:\DELL E7450\Project.Net\ChatApp\Application\obj\Debug\net8.0\Application.sourcelink.json

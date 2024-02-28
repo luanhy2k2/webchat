@@ -29,7 +29,7 @@ namespace Data.Entities
         //[Column("UserId")]
         //[ForeignKey("User")]
         //public string UserId { get; set; }
-
+        public ICollection<FileUpload> FileUploads { get; set; }
         public ManageUser User { get; set; }
         public Room Room { get; set; }
     }

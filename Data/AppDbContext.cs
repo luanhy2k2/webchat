@@ -19,5 +19,6 @@ namespace Data
        
         public DbSet<Room> Room { get;set; }
         public DbSet<Message> Message { get; set; }
+        public DbSet<FileUpload> FileUpload { get; set; }
     }
 }

@@ -12,3 +12,4 @@ D:\DELL E7450\Project.Net\ChatApp\Data\obj\Debug\net8.0\refint\Data.dll
 D:\DELL E7450\Project.Net\ChatApp\Data\obj\Debug\net8.0\Data.pdb
 D:\DELL E7450\Project.Net\ChatApp\Data\obj\Debug\net8.0\Data.genruntimeconfig.cache
 D:\DELL E7450\Project.Net\ChatApp\Data\obj\Debug\net8.0\ref\Data.dll
+D:\DELL E7450\Project.Net\ChatApp\Data\obj\Debug\net8.0\Data.sourcelink.json

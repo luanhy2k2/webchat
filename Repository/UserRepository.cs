@@ -1,7 +1,9 @@
 ﻿using Application.Model;
 using Data.Entities;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -9,6 +11,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Repository
@@ -18,11 +21,14 @@ namespace Repository
         private readonly UserManager<ManageUser> _userManager;
         private readonly IConfiguration _configuration;
         private readonly RoleManager<IdentityRole> _roleManager;
-        public UserRepository(UserManager<ManageUser> userManager, IConfiguration configuration, RoleManager<IdentityRole> roleManager)
+        private readonly IWebHostEnvironment _environment;
+        public UserRepository(UserManager<ManageUser> userManager, Microsoft.AspNetCore.Hosting.IWebHostEnvironment webHostEnvironment,
+            IConfiguration configuration, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _configuration = configuration;
             _roleManager = roleManager;
+            _environment = webHostEnvironment;
         }
         public async Task<Object> Login(LoginModel model)
         {
@@ -65,20 +71,45 @@ namespace Repository
         {
             try
             {
+                var folderPath = Path.Combine(_environment.WebRootPath, "avatars");
+                string fileName;
+
+                if (model.Avartar != null)
+                {
+                    fileName = model.Avartar.FileName;
+
+                    if (!Directory.Exists(folderPath))
+                        Directory.CreateDirectory(folderPath);
+
+                    var filePath = Path.Combine(folderPath, fileName);
+
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await model.Avartar.CopyToAsync(fileStream);
+                    }
+                }
+                else
+                {
+                    // If no avatar is uploaded, use the default avatar
+                    fileName = "default-avatar.png";
+                }
+
                 var user = new ManageUser
                 {
                     UserName = model.Email,
                     Email = model.Email,
                     FullName = model.FullName,
-                    Avartar = model.Avartar
+                    Avartar = "https://localhost:7066/avatars/" + fileName
                 };
+
                 var result = await _userManager.CreateAsync(user, model.Password);
                 return result;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception("Error", ex);
             }
         }
+
     }
 }

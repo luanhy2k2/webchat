@@ -1,0 +1,57 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\DELL E7450\\Project.Net\\ChatApp\\ChatApp\\wwwroot\\avatars\\avatar3.png",
+      "PackagePath": "staticwebassets\\avatars\\avatar3.png"
+    },
+    {
+      "Id": "D:\\DELL E7450\\Project.Net\\ChatApp\\ChatApp\\wwwroot\\avatars\\avatar4.png",
+      "PackagePath": "staticwebassets\\avatars\\avatar4.png"
+    },
+    {
+      "Id": "D:\\DELL E7450\\Project.Net\\ChatApp\\ChatApp\\wwwroot\\avatars\\default-avatar.png",
+      "PackagePath": "staticwebassets\\avatars\\default-avatar.png"
+    },
+    {
+      "Id": "D:\\DELL E7450\\Project.Net\\ChatApp\\ChatApp\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\DELL E7450\\Project.Net\\ChatApp\\ChatApp\\wwwroot\\uploads\\avatar1.png",
+      "PackagePath": "staticwebassets\\uploads\\avatar1.png"
+    },
+    {
+      "Id": "D:\\DELL E7450\\Project.Net\\ChatApp\\ChatApp\\wwwroot\\uploads\\avatar2.png",
+      "PackagePath": "staticwebassets\\uploads\\avatar2.png"
+    },
+    {
+      "Id": "D:\\DELL E7450\\Project.Net\\ChatApp\\ChatApp\\wwwroot\\uploads\\avatar3.png",
+      "PackagePath": "staticwebassets\\uploads\\avatar3.png"
+    },
+    {
+      "Id": "D:\\DELL E7450\\Project.Net\\ChatApp\\ChatApp\\wwwroot\\uploads\\avatar4.png",
+      "PackagePath": "staticwebassets\\uploads\\avatar4.png"
+    },
+    {
+      "Id": "D:\\DELL E7450\\Project.Net\\ChatApp\\ChatApp\\wwwroot\\uploads\\vis.jpg",
+      "PackagePath": "staticwebassets\\uploads\\vis.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ChatApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ChatApp.props",
+      "PackagePath": "build\\ChatApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ChatApp.props",
+      "PackagePath": "buildMultiTargeting\\ChatApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ChatApp.props",
+      "PackagePath": "buildTransitive\\ChatApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

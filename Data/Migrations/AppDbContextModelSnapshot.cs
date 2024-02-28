@@ -22,6 +22,32 @@ namespace Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Data.Entities.FileUpload", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MessageId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NameFile")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MessageId");
+
+                    b.ToTable("UploadFile");
+                });
+
             modelBuilder.Entity("Data.Entities.ManageUser", b =>
                 {
                     b.Property<string>("Id")
@@ -286,6 +312,17 @@ namespace Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Data.Entities.FileUpload", b =>
+                {
+                    b.HasOne("Data.Entities.Message", "Message")
+                        .WithMany("FileUploads")
+                        .HasForeignKey("MessageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Message");
+                });
+
             modelBuilder.Entity("Data.Entities.Message", b =>
                 {
                     b.HasOne("Data.Entities.Room", "Room")
@@ -368,6 +405,11 @@ namespace Data.Migrations
                     b.Navigation("Messages");
 
                     b.Navigation("Rooms");
+                });
+
+            modelBuilder.Entity("Data.Entities.Message", b =>
+                {
+                    b.Navigation("FileUploads");
                 });
 #pragma warning restore 612, 618
         }

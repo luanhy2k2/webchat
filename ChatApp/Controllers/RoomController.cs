@@ -57,13 +57,13 @@ namespace ChatApp.Controllers
             }
         }
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult> Edit(int id, RoomModel roomViewModel)
+        [HttpPut]
+        public async Task<ActionResult> Edit([FromBody] RoomModel roomViewModel)
         {
             try
             {
-                var result = await _repository.Edit(id,User.Identity.Name, roomViewModel);
-                return Ok(result);
+                var result = await _repository.Edit(roomViewModel.ID,User.Identity.Name, roomViewModel);
+                return Ok();
             }
             catch(Exception ex)
             {
